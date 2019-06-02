@@ -1,0 +1,50 @@
+version: "1.0"
+
+name: "sample1"
+description: "A+B problem" # This line is ignored by the generator
+
+seed: 12345
+test_num: 10
+
+variables:
+  a:
+    type: Int
+    min: 0
+    max: 100
+  b:
+    type: Int
+    min: -20
+    max: 100
+
+# use the same value in every case
+generate:
+  - b
+
+# special cases
+tests:
+  0:
+    variables:
+      a:
+        value: 10
+      b:
+        value: 300
+  1:
+    display: "10\n20\n"
+  3:
+    file: "special_case1.in"
+  6:
+    test_num: 3
+    variables:
+      a:
+        min: 52
+
+file_format:
+  file: '{}.in'
+  folder: '{}/'
+
+data_format:
+  sep: "\n"
+  display:
+    - "{a}"
+    - "{b}"
+

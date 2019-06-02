@@ -1,0 +1,52 @@
+version: "1.0"
+
+name: "sample3"
+description: "Grid Generator"
+
+seed: 20
+test_num: 10
+
+variables:
+  n:
+    type: Int
+    min: 4
+    max: 100
+  m:
+    type: Int
+    min: 4
+    max: 100
+  arr:
+    type: Array
+    num:
+      ref: n
+    sep: "\n"
+    data:
+      type: String
+      length:
+        ref: m
+      range: lower
+
+tests:
+  0: &subtask1
+    variables:
+      n:
+        max: 10
+      m:
+        max: 10
+  1: *subtask1
+  2: *subtask1
+  3: *subtask1
+  4: *subtask1
+
+file_format:
+  start: 1
+  folder: "{}"
+  file: "{}.in"
+
+data_format:
+  sep: "\n"
+  endl: "\n"
+  display:
+    - "{n} {m}"
+    - "{arr}"
+

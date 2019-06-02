@@ -1,0 +1,47 @@
+version: "1.0"
+
+name: "sample2"
+description: "Find maximum number of a given list"
+
+seed: 12345
+test_num: 10
+
+variables:
+  n:
+    type: Int
+    min: 4
+    max: 10
+  arr:
+    type: Array
+    num:
+      ref: n
+    sep: ' '
+    data:
+      type: Int
+      min: 0
+      max: 20
+
+# special cases
+tests:
+  6:
+    test_num: 3
+    variables:
+      n:
+        value: 3
+
+file_format:
+  level:
+    0:
+      start: 1
+      folder: '{}'
+      file: '{}.in'
+    1:
+      start: a
+      file: '{}.in'
+
+data_format:
+  sep: "\n"
+  display:
+    - "{n}"
+    - "{arr}"
+
