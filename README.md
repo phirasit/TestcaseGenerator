@@ -1,4 +1,4 @@
-# TestcaseGenerator
+# Testcase Generator
 A python-based testcase generator
 
 # How To Use
